@@ -1,0 +1,79 @@
+main{
+    padding-top: 50px;
+    min-height: 100vh;
+}
+.leftSide{
+    background-color: white;
+    margin: 10px;
+    box-shadow: 0px 0px 5px rgba(128, 128, 128, 0.351);
+    height: fit-content;
+    padding: 10px;
+    border-radius: 0px;
+}
+.rightSide{
+    background-color: white;
+    margin: 10px;
+    min-height: 70vh;
+    box-shadow: 0px 0px 5px rgba(128, 128, 128, 0.351);
+    padding: 10px;
+    border-radius: 0px;
+}
+.row{
+    /*background-color: azure;*/
+}
+.img{
+    padding: 10px;
+    width: 100%;
+    border-radius: 50%;
+    background-color:  #f8f9fa;
+    
+}
+.img img{
+    width: 100%;
+    border-radius: 50%;
+    background-color: #f8f9fa;
+}
+table{
+    width: 100%;
+}
+
+input{
+    border-color: transparent ;
+    padding-left: 10px;
+    font-size: small;
+    border-radius: 0;
+}
+input:hover{
+    border: 2px solid #666;
+}
+.hidden{
+    display: none;
+}
+.chowen{
+    display: flex;
+}
+.btn{
+    border-radius:  0;
+    box-shadow: 0px 0px 5px rgba(128, 128, 128, 0.351);
+}
+.btndiv{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+td{
+    font-size: 1rem;
+    font-weight: 470;
+    color: #666;
+}
+.tr3{
+    height: 40px;
+}
+.tr2 td{
+    color : #666;
+    background-color: #f8f9fa;
+}
+.tr1:hover td{
+    background-color: #f8f9fa;
+}

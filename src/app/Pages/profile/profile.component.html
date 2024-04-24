@@ -1,0 +1,96 @@
+<main>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-3 leftSide" data-aos="zoom-out-right" data-aos-duration="2000">
+                <div class="img">
+                    <img [src]="img" alt="customer">
+                </div>
+            </div>
+            <ng-container *ngIf="!id; else viewOnlyMode">
+                <form [formGroup]="myForm" class="col-8 rightSide table-responsive" (ngSubmit)="onSubmit()">
+                    <div class="justify-content-center align-items-center">
+                        <table cellspacing="0" cellpadding="6" border="0" class="table table-hover" (mouseover)="dataChanged()">
+                            <tbody>
+                                <tr class="tr2">
+                                    <td class="td1">User Details</td>
+                                    <td>Values</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td align="left" width="140">First Name</td>
+                                    <td align="left"><input type="text" id="first_name" formControlName="first_name" (mouseout)="dataChanged()" (change)="dataChanged()"/></td>
+                                    <td></td>
+                                </tr>  
+                                <tr>
+                                    <td align="left" width="140">Last Name</td>
+                                    <td align="left"><input type="text" id="last_name" formControlName="last_name"(mouseout)="dataChanged()"/></td>
+                                    <td></td>
+                                </tr>   
+                                <tr>
+                                    <td align="left">Email</td>
+                                    <td align="left"><input type="text" id="email" formControlName="email"(mouseout)="dataChanged()"/></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="tr3"></tr>
+                                <tr class="tr2">
+                                    <td class="td1">Projects</td>
+                                    <td>Description</td>
+                                    <td>task</td>
+                                </tr>
+                                <tr *ngFor="let project of projects" class="tr1" (click)="RedirectToProject(project.id)" style="cursor:pointer;">
+                                    <td class="td1">{{project.name}}</td>
+                                    <td>{{project.description}}</td>
+                                    <td>100%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="btndiv">
+                            <button class="btn" [ngClass]="{chowen:changed,'hidden': !changed }" type="submit">Save</button>
+                        </div>
+                    </div>
+                </form>
+            </ng-container>
+            <ng-template #viewOnlyMode>
+                <div class="col-8 rightSide table-responsive">
+                    <div class="justify-content-center align-items-center">
+                        <table cellspacing="0" cellpadding="6" border="0" class="table table-hover" (mouseover)="dataChanged()">
+                            <tbody>
+                                <tr class="tr2">
+                                    <td class="td1">User Details</td>
+                                    <td>Values</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td align="left" width="140">First Name</td>
+                                    <td align="left">{{ myForm.get('first_name').value }}</td>
+                                    <td></td>
+                                </tr>  
+                                <tr>
+                                    <td align="left" width="140">Last Name</td>
+                                    <td align="left">{{ myForm.get('last_name').value }}</td>
+                                    <td></td>
+                                </tr>   
+                                <tr>
+                                    <td align="left">Email</td>
+                                    <td align="left">{{ myForm.get('email').value }}</td>
+                                    <td></td>
+                                </tr>
+                                <tr class="tr3"></tr>
+                                <tr class="tr2">
+                                    <td class="td1">Projects</td>
+                                    <td>Description</td>
+                                    <td>task</td>
+                                </tr>
+                                <tr *ngFor="let project of projects" class="tr1" (click)="RedirectToProject(project.id)" style="cursor:pointer;">
+                                    <td class="td1">{{project.name}}</td>
+                                    <td>{{project.description}}</td>
+                                    <td>100%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </ng-template>
+        </div>
+    </div>
+</main>
