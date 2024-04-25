@@ -124,7 +124,7 @@ export class ProfileComponent implements OnInit {
     this.userService.updateUser(this.NewUser).subscribe((data)=>{
       alert("Profile updated successfully!");
       console.log(data);
-      //window.location.reload();
+      window.location.reload();
     });
     this.changed = false;
   }
