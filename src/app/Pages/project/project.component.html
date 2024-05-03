@@ -1,6 +1,13 @@
 <main class="container">
     <div class="col-12 name center">
-        <p class="pp mt-3" style="justify-content: center; text-align:center">PFE Project</p>
+        <div class=" row">
+            <div class="col-11">
+                <p class="pp mt-3" style="justify-content: center; text-align:center">PFE Project</p>
+            </div>
+            <button class="btn del col-1"><svg height="17px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"/></svg></button>
+        </div>
+        
+
         <p class="pp">TeamMates</p>
         <div class="col-12 center">
             <p style="text-align: center;">
@@ -12,7 +19,7 @@
     </div>
     <div class="table-responsive">
         <p class="pp">Tasks</p>
-        <table cellspacing="0" cellpadding="6" border="0" class="table table-hover table-responsive">
+        <table cellspacing="0" cellpadding="6" border="0" class="table table-hover">
             <thead>
                 <tr>
                     <td>#</td>
@@ -76,19 +83,42 @@
                 </tr>
             </tbody>
         </table>
-        <p class="pp">Comments</p>
-        <form action="">
-            <input class="col-11 input" type="text" placeholder="tap ur comment here"/>
-            <button class="btn col-1">Send</button>
+        <p class="pp">Add Task</p>
+        <form [formGroup]="taskForm" (ngSubmit)="onCreateTask()" class="table-responsive">
+            <table cellspacing="0" cellpadding="6" border="0" class="table table-hover table-responsive">
+                <tbody>
+                    <tr>
+                        <td>Name</td>
+                        <td>Details</td>
+                        <td>Start Date</td>
+                        <td>End Date</td>
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" placeholder="Name" formControlName="name"></td>
+                        <td><input type="text" placeholder="Details" formControlName="details"></td>
+                        <td><input type="date" placeholder="Start Date" formControlName="startDate"></td>
+                        <td><input type="date" placeholder="End Date" formControlName="endDate"></td>
+                        <td><button type="submit" class="btn btn-submit" [disabled]="taskForm.invalid">Create</button></td>
+                    </tr>
+                </tbody>
+            </table>
         </form>
+        
+        <p class="pp">Add Comment</p>
+        <form [formGroup]="commentForm" (ngSubmit)="onSubmitComment()">
+            <input class="col-11 input" type="text" placeholder="Type your comment here" formControlName="commentText">
+            <button class="btn col-1" type="submit" [disabled]="commentForm.invalid">Send</button>
+          </form>
+          
         <p class="pp">All Comments</p>
         <div class="col-12">
             <ul class="list">
                 <li class="col-12 row">
-                    <div class="col-1 ">
+                    <div class="col-2">
                         <img src="/assets/Images/customer.png" alt="" srcset="">
                     </div>
-                    <div class="col-9 c">
+                    <div class="col-8 c">
                         <span class="msgSpan">hi</span>
                     </div>
                     <div class="col-2 c">
@@ -96,10 +126,10 @@
                     </div>
                 </li>
                 <li class="col-12 row">
-                    <div class="col-1">
+                    <div class="col-2">
                         <img src="/assets/Images/Web-Developer.jpg" alt="" srcset="">
                     </div>
-                    <div class="col-9 c">
+                    <div class="col-8 c">
                         <span class="msgSpan">yo</span>
                     </div>
                     <div class="col-2 c">

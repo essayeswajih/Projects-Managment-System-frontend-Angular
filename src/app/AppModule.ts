@@ -11,6 +11,9 @@ import { UserComponent } from './user/user.component';
 import { UserService } from './services/user.service';
 import { RouterModule } from '@angular/router';
 import { ProfileComponent } from './Pages/profile/profile.component';
+import { ProjectComponent } from './Pages/project/project.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 
@@ -20,7 +23,10 @@ import { ProfileComponent } from './Pages/profile/profile.component';
     RegisterComponent,
     LoginComponent,
     UserComponent,
-    ProfileComponent
+    ProfileComponent,
+    ProjectComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

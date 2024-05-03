@@ -1,3 +1,5 @@
+import { Project } from "./project";
+
 export interface User{
     id: number
     firstName: string;
@@ -5,4 +7,6 @@ export interface User{
     email: string;
     imageUrl: string;
     userCode: string;
+    role:string
+    project:Project[]
 }

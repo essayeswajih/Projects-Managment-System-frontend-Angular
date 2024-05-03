@@ -1,3 +1,4 @@
+import { AuthService } from 'src/app/services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { JwtService } from 'src/app/services/jwt.service';
@@ -14,7 +15,8 @@ export class LoginComponent implements OnInit{
   constructor(
     private service: JwtService,
     private fb: FormBuilder,
-    private router: Router
+    private router: Router,
+    private auth:AuthService
   ) { }
 
   ngOnInit(): void {
@@ -30,10 +32,17 @@ export class LoginComponent implements OnInit{
         if (response.token != null) {
           alert("Hello, Your token is " + response.token);
           const jwtToken = response.token;
-          localStorage.setItem('token', jwtToken);
-          this.router.navigateByUrl("/dashboard");
+          this.auth.setToken(jwtToken);
+          if(this.auth.isAdmin()){
+            this.router.navigateByUrl("/dashboard");
+          }
+          else{
+            this.router.navigateByUrl("/");
+          }
+          
         }
-      }
+      },
+      (error=>console.log(error))
     );
   }
   

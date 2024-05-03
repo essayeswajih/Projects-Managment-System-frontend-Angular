@@ -65,3 +65,47 @@ ul, li{
 li{
     background-color: #f8f9fa;
 }
+.btn-submit:hover{
+    background-color: #777 !important;
+
+}
+.btn-submit{
+    width: fit-content;
+    padding-right: 10px;
+}
+main{
+    margin-top: 30px;
+    padding-top: 0px;
+    background-color: #f8f9fa;
+    box-shadow: 0px 0px 7px #f8f9fa;
+}
+.input{
+    background-color: white;
+}
+.btn{
+    border: none;
+    margin: 0 !important;
+    margin-bottom: 1px;
+}
+input:focus{
+    border: none;
+    outline: 1px #f8f9fa;
+}
+.btn:hover{
+    background-color: #ddd !important;
+    margin: 0 !important;
+    border: none;
+    height: 40px;
+    border-radius: 0;
+}
+button{
+    height: 40px;
+    border: none;
+}
+.del{
+    height: 60px;
+}
+.del:hover{
+    height: 60px;
+    background-color: rgba(164, 8, 8, 0.347) !important;
+}

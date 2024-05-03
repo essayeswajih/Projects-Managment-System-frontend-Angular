@@ -1,3 +1,4 @@
+import { Project } from 'src/app/interfaces/project';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -45,7 +46,7 @@ export class ProfileComponent implements OnInit {
     if (this.authService.isLoggedIn()) {
       this.route.params.subscribe(params => {
         this.id = params['id'];
-        if (this.id) {
+        if (this.id>'0' && this.id<'99999999999999999') {
           this.userService.getUserById(this.id).subscribe(
             (userData) => {
               this.user=userData;
@@ -59,7 +60,7 @@ export class ProfileComponent implements OnInit {
             }
           );
         } else {
-          this.userService.getUserByEmail(this.authService.getUserId()).subscribe(
+          this.userService.getUserByEmail(this.authService.getUserEmail()).subscribe(
             (userData) => {
               console.log(typeof(userData));
               this.user=userData;
@@ -119,6 +120,7 @@ export class ProfileComponent implements OnInit {
     this.NewUser.userName = this.user.userName;
     this.NewUser.imageUrl = this.user.imageUrl;
     this.NewUser.userCode = this.user.userCode;
+    this.NewUser.project = this.user.project;
     
     console.log(this.NewUser);
     this.userService.updateUser(this.NewUser).subscribe((data)=>{
@@ -142,5 +144,6 @@ class User1 {
   userName: string;
   imageUrl: string;
   userCode: string;
+  project: any;
 
 }

@@ -1,0 +1,107 @@
+main{
+    min-height: 100vh;
+
+}
+
+.f{
+    width: fit-content;
+    height: fit-content;
+    margin: 0;
+    padding-bottom: 20px;
+}
+.f1{
+    padding-bottom: 20vh;
+
+}
+.f2{
+    padding-top: 20vh;
+
+}
+.s1{
+    height: 50vh;
+    backdrop-filter: blur(10px);
+    
+}
+.sec1{
+    height: auto;
+    background-image: url("/assets/Images/project-managemenr-goals.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+svg{
+    fill:white;
+    margin: 0;
+    padding: 0;
+}
+.justeAHeight{
+    height: 30vh;
+}
+.GetStarted{
+    transition-duration: 1ms !important;
+    transform: 400ms;
+}
+.getS{
+    margin-top: 30px;
+    margin-left: 30px;
+    min-height: 100px;
+    font-size: 1.5rem;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.43);
+    transition: all 0.3s;
+    border-radius: 50px !important;
+    font-weight: bold;
+    backdrop-filter: blur(10px);
+    
+}
+.getS:hover{
+    font-weight: bolder;
+    font-size: 1.5rem;
+    backdrop-filter: blur(15px);
+    border-radius: 10px !important;
+    transform: scale(1.1);
+}
+.dw{
+    margin-top: 10px;
+    background-color: rgba(255, 255, 255, 0.43);
+    border-radius: 50px;
+    width: fit-content;
+    color: white;
+    font-weight: bolder;
+}
+.Homeform{
+    padding-top: 80px;
+    padding-left: 80px;
+    padding-right: 80px;
+    min-height: 400px;
+    label{
+        color: #6666667e;
+        font-weight: bold;
+    }
+    input{
+        min-height: 70px;
+        min-width: 90%;
+        
+    }
+    button{
+        color: #6666667e;
+        background-color: white;
+        margin-top: 5px;
+        padding: 25px 14px 24px 14px;
+        border-radius:67% 33% 68% 32% / 34% 57% 43% 66%  ;
+        width: auto;
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+    button:hover{
+        color: #666666d7;
+        background-color: #d3d3d36f;
+
+    }
+    border-radius:67% 33% 68% 32% / 34% 57% 43% 66%  ;
+}
+.s3{
+    min-height: 20vh;
+}
