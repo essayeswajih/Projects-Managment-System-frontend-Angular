@@ -54,12 +54,13 @@ svg{
     border-radius: 50px !important;
     font-weight: bold;
     backdrop-filter: blur(10px);
+    max-width: 350px;
     
 }
 .getS:hover{
     font-weight: bolder;
     font-size: 1.5rem;
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(20px);
     border-radius: 10px !important;
     transform: scale(1.1);
 }
@@ -70,6 +71,9 @@ svg{
     width: fit-content;
     color: white;
     font-weight: bolder;
+    padding: 10px;
+    margin-left: 5.5%;
+    backdrop-filter: blur(20px);
 }
 .Homeform{
     padding-top: 80px;
