@@ -1,0 +1,103 @@
+.main1{
+    padding-top: 5vh;
+}
+.form-group{
+    margin-bottom: 1em;
+}
+p{
+    min-height: 10vh;
+    font-size: 1.85rem;
+    font-weight: 500;
+    color: whitesmoke;
+}
+.btn-primary{
+    margin-top: 1vh;
+    width: fit-content;
+    background-color: #999;
+    color: whitesmoke;
+    border-color: #666;
+    border: none;
+}
+.btn-primary:hover{
+    color: white;
+    background-color: #222;
+}
+
+
+.btn-primary{
+    color: white;
+    background-color: #666;
+}
+.btn-danger:hover{
+    background-color: red;
+    color: white;
+    border-color: whitesmoke;
+}
+.btn-danger{
+    color: red;
+    background-color: #fefefe;
+    border: none;
+}
+table{
+    margin-top: .5em;
+}
+.table-responsive{
+    color :whitesmoke;
+    margin-bottom: 10px;
+    background-color: #555;
+}
+.label{
+    padding-top: 10px;
+    font-size: 2rem;
+    font-family: 500;
+    
+}
+td.col-10{
+    padding-left: 1em;
+}
+td{
+    padding-bottom: 5px;
+    padding-top: 10px;
+    margin-bottom: 0px;
+}
+.b1{
+    margin-top: 0;
+}
+.f2{
+    background-color: #eee;
+    padding: 15px;
+    margin: 21px;
+    .form-group{
+        margin-bottom: 0px;
+    }
+}
+.table{
+    border-radius: 50px;
+}
+
+.addTeamMember{
+    font-weight: 500;
+    color: #666;
+    font-size: 1em;
+}
+.finishDiv{
+    margin-bottom: 3vh;
+}
+.main2{
+    padding-right: 2vh;
+    margin-bottom: 5vh;
+}
+form{
+    padding: 30px;
+    padding-top: 50px;
+    background-color: #555;
+    color: whitesmoke;
+}
+.email111{
+    font-weight: 500;
+    color: #555;
+    padding-top: 16px;
+}
+.delete{
+    margin-bottom: 7px;
+}

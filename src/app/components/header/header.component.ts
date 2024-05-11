@@ -11,29 +11,32 @@ export class HeaderComponent {
   navList:navItem[]=[];
   constructor(private auth : AuthService){}
   ngOnInit(){
-    if(this.auth.isLoggedIn()){
-      this.navList.push({ item : "Profile", url : "/profile"});
-      if(this.auth.isAdmin()){
-        this.navList.push(
-          { item : "Dashboard", url : "/dashboard"},
-          { item : "Logout", url : "/logout"}
-        );
+    this.auth.isLoggedIn().subscribe(isLoggedIn => {
+      if(isLoggedIn){
+        this.navList.push({ item : "Profile", url : "/profile"});
+        this.navList.push({ item : "Create Project", url : "/firtsStep"});
+        this.auth.isAdmin().subscribe(isAdmin => {
+          if(isAdmin){
+            this.navList.push(
+              { item : "Dashboard", url : "/dashboard"},
+              { item : "Logout", url : "/logout"}
+            );
+          }
+          else{
+            this.navList.push(
+              { item : "Logout", url : "/logout"}
+            );
+          }
+        });
       }
       else{
-        this.navList.push(
-          { item : "Logout", url : "/logout"}
-        );
+        this.navList= [
+          { item : "Register", url : "/register"},
+          { item : "Login", url : "/login"}
+        ];
       }
-      
-    }
-    else{
-      this.navList= [
-        { item : "Register", url : "/register"},
-        { item : "Login", url : "/login"}
-      ];
-    }
-   
-  }
+    });
+  }  
 }
 interface navItem{
   item:String

@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Observable, map } from 'rxjs';
+import { Observable, catchError, map, of } from 'rxjs';
 import * as jwt_decode from 'jwt-decode';
 import { User } from '../interfaces/user';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environment';
+
 const apiBaseUrl = environment.apiBaseUrl;
 
 @Injectable({
@@ -30,9 +31,15 @@ export class AuthService {
   getUser(): Observable<User | null> {
     let email = this.getUserEmail();
     if (email !== null) {
-      return this.http.get<User>(`${this.apiServerUrl}/admin/findByEmail/${email}`, { headers: this.headers });
+      return this.http.get<User>(`${this.apiServerUrl}/admin/findByEmail/${email}`, { headers: this.headers })
+        .pipe(
+          catchError(error => {
+            console.error('Error fetching user:', error);
+            return of(null); // Return an Observable that emits null
+          })
+        );
     } else {
-      return null;
+      return of(null); // Return an Observable that emits null
     }
   }
 
@@ -42,11 +49,7 @@ export class AuthService {
     );
   }
 
-  getToken(): string | null {
-    return localStorage.getItem('token');
-  }
-
-  getUserId(): Observable<Number> {
+  getUserId(): Observable<number | null> {
     return this.getUser().pipe(
       map(user => user ? user.id : null)
     );
@@ -58,13 +61,19 @@ export class AuthService {
     );
   }
 
+  isLoggedIn(): Observable<boolean> {
+    return this.getUser().pipe(
+      map(user => user !== null)
+    );
+  }
+
+  getToken(): string | null {
+    return localStorage.getItem('token');
+  }
+
   setToken(token: string): void {
     localStorage.setItem('token', token);
     this.updateHeaders();
-  }
-
-  isLoggedIn(): boolean{
-    return this.getToken() !== null;
   }
 
   logout(): void {

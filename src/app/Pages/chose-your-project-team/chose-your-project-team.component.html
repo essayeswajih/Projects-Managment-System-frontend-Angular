@@ -1,0 +1,78 @@
+<main class="main1 container">
+  <div class="row">
+      <form action="">
+          <div class="row justify-content-center align-items-center">
+              <p style="text-align: center;">Create Your Project Now !!</p>
+          </div>
+          <div class="form-group row">
+              <label for="name" class="col-2 col-form-label">Project Name</label>
+              <div class="col-9">
+                  <input type="text" class="form-control" name="name" id="name" placeholder="demo">
+              </div>
+          </div>
+          <div class="form-group row">
+              <label for="Description" class="col-2 col-form-label">Description</label>
+              <div class="col-9">
+                  <textarea class="form-control" name="Description" id="Description">Description</textarea>
+              </div>
+          </div>
+          <div class="form-group row">
+              <label for="EndDate" class="col-2 col-form-label">End Date</label>
+              <div class="col-9">
+                  <input type="date" class="form-control date" name="EndDate" id="EndDate" value="2200-11-03">
+              </div>
+          </div>
+          <div class="row justify-content-center align-items-center">
+              <button type="submit" class="btn btn-primary">Create</button>
+          </div>
+      </form>
+  </div>
+</main>
+<main class="container main2">
+  <div class="row justify-content-center align-items-center">
+    
+      <form (ngSubmit)="onSubmit()" class="row f2" [formGroup]="myForm">
+          <div class="form-group row align-items-center">
+              <div class="col-3">
+                  <label for="email" class=" col-form-label addTeamMember">Add a Team Member with his Email</label>
+              </div>
+              <div class="col-8">
+                  <input formControlName="email" type="email" class="form-control" name="email" id="email" placeholder="Email">
+              </div>
+              <div class="col-sm-1">
+                  <button type="submit" class="btn btn-primary b1">Add</button>
+              </div>
+          </div>
+      </form>
+      <div class="table-responsive">
+          <div class="label">
+              Our Team Members
+          </div>
+      <table class="table table-striped table col-12">
+        <tbody>
+          <tr class="col-12">
+            <td class="col-10 email111">
+              wajih@gmail.com
+            </td>
+            <td class="col-2">
+              <button class="btn btn-primary delete">Delete</button>
+            </td>
+          </tr>
+          <tr class="col-12">
+            <td class="col-10 email111">
+              wajih@gmail.com
+            </td>
+            <td class="col-2">
+              <button class="btn btn-primary delete">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="finishDiv row justify-content-center align-items-center">
+          <button class="btn btn-primary">Finish</button>
+        </div>
+    </div>
+
+  </div>
+</main>
+

@@ -34,10 +34,14 @@ export class LoginComponent implements OnInit{
           const jwtToken = response.token;
           this.auth.setToken(jwtToken);
           if(this.auth.isAdmin()){
-            this.router.navigateByUrl("/dashboard");
+            this.router.navigateByUrl('/dashboard').then(() => {
+              window.location.reload();
+            });
           }
           else{
-            this.router.navigateByUrl("/");
+            this.router.navigateByUrl('/').then(() => {
+              window.location.reload();
+            });
           }
           
         }

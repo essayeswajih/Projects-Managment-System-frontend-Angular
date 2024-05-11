@@ -14,6 +14,10 @@ import { ProfileComponent } from './Pages/profile/profile.component';
 import { ProjectComponent } from './Pages/project/project.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { CommonModule } from '@angular/common';
+import { LogoutComponent } from './Pages/logout/logout.component';
+import { ChoseYourProjectTeamComponent } from './Pages/chose-your-project-team/chose-your-project-team.component';
+import { CreateYourProjectComponent } from './Pages/create-your-project/create-your-project.component';
 
 
 
@@ -26,7 +30,10 @@ import { FooterComponent } from './components/footer/footer.component';
     ProfileComponent,
     ProjectComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    LogoutComponent,
+    ChoseYourProjectTeamComponent,
+    CreateYourProjectComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +41,8 @@ import { FooterComponent } from './components/footer/footer.component';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    CommonModule,
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
